@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Button Redirect Extension",
+  "version": "1.0",
+  "description": "Adds a button that redirects to another page with data",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
